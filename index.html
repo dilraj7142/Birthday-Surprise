@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 🎂</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+<section id="intro" class="screen active"><div class="card">
+<p class="small">A little surprise for</p><h1>[HER NAME] 💫</h1>
+<p>Tap below when you're ready...</p><button onclick="showNotification()">Open Surprise</button>
+</div></section>
+<section id="notification" class="screen"><div class="phone">
+<div class="phone-top">9:41</div><div class="notification"><strong>🎉 Birthday Reminder</strong>
+<p>Someone special has a birthday today.</p></div>
+<button onclick="showEnvelopes()">Continue</button>
+</div></section>
+<section id="envelopes" class="screen"><div class="card">
+<h2>Choose 3 little messages 💌</h2><div class="envelope-grid">
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+<button class="envelope" onclick="openEnvelope(this)">💌</button>
+</div><p id="envelopeStatus">Open 3 envelopes to continue.</p>
+<button id="gameButton" class="hidden" onclick="showGame()">Continue ✨</button>
+</div></section>
+<section id="game" class="screen"><div class="card">
+<h2>Mini Birthday Game 🎮</h2><p id="question"></p><div id="answers"></div><p id="gameResult"></p>
+</div></section>
+<section id="final" class="screen"><div class="card final-card">
+<div class="cake">🎂</div><h1>Happy Birthday, [HER NAME]! 🎉</h1>
+<p>I hope your day is filled with smiles, good memories, and all the little things that make you happy.</p>
+<p class="signature">— [YOUR NAME] 💫</p><div class="celebration">✨ 🎈 🎊 ✨</div>
+</div></section>
+</main>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
